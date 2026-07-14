@@ -31,8 +31,8 @@ const navLinks = [
         ],
     },
     { label: "Brands", href: "/brands" },
-    { label: "Solar Calculator", href: "/calculator" },
-    { label: "Resources", href: "/resources" },
+    // { label: "Solar Calculator", href: "/calculator" },
+    // { label: "Resources", href: "/resources" },
     { label: "Contact", href: "/contact" },
 ];
 

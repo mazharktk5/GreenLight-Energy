@@ -30,3 +30,8 @@ body {
   color: var(--foreground);
   font-family: var(--font-poppins), sans-serif;
 }
+
+/* ── Header height offset for full-screen hero sections ── */
+:root              { --header-h: 64px;  }  /* mobile: mainnav h-16 only (topbar hidden) */
+@media (min-width: 640px)  { :root { --header-h: 102px; } }  /* sm+: mainnav 64px + topbar 38px */
+@media (min-width: 1024px) { :root { --header-h: 118px; } }  /* lg+: mainnav 80px + topbar 38px */
