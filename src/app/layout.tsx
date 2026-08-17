@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Montserrat, Poppins } from "next/font/google";
 import "./globals.css";
 import MainNav from "@/components/navbar/MainNav";
+import Footer from "@/components/Footer";
 
 const montserrat = Montserrat({
   variable: "--font-montserrat",
@@ -30,6 +31,7 @@ export default function RootLayout({
       <body className="overflow-x-hidden">
         <MainNav />
         {children}
+        <Footer />
       </body>
     </html>
   );
