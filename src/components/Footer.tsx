@@ -41,8 +41,8 @@ export default function Footer() {
                                 className="object-contain"
                             />
                             <span className="flex flex-col leading-none">
-                                <span className="text-white font-heading font-bold text-sm tracking-wider">
-                                    GREEN<span className="text-gold">LIGHT</span>
+                                <span className="font-heading font-bold text-sm tracking-wider">
+                                    <span className="text-secondary">GREEN</span><span className="text-gold">LIGHT</span>
                                 </span>
                                 <span className="text-white/40 text-[10px] tracking-[0.2em] uppercase">Energy</span>
                             </span>
