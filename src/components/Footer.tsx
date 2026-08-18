@@ -110,7 +110,7 @@ export default function Footer() {
                         <ul className="space-y-4">
                             <li className="flex items-start gap-3 text-white/50 text-sm">
                                 <MapPin size={14} className="text-gold mt-0.5 shrink-0" />
-                                Karachi, Sindh, Pakistan
+                                KPK, Peshawar, Pakistan
                             </li>
                             <li>
                                 <a
@@ -118,7 +118,7 @@ export default function Footer() {
                                     className="flex items-center gap-3 text-white/50 hover:text-gold text-sm transition-colors"
                                 >
                                     <Phone size={14} className="text-gold shrink-0" />
-                                    +92 300 123 4567
+                                    +92 326 8468166
                                 </a>
                             </li>
                             <li>
@@ -127,7 +127,7 @@ export default function Footer() {
                                     className="flex items-center gap-3 text-white/50 hover:text-gold text-sm transition-colors"
                                 >
                                     <Mail size={14} className="text-gold shrink-0" />
-                                    info@greenlightenergy.pk
+                                    info@greenlightenergy.com
                                 </a>
                             </li>
                         </ul>
