@@ -13,48 +13,47 @@ const companyDropdown = [
 
 const productsData = [
     {
-        label: "Residential Solar",
+        label: "Residential – GreenHome",
         href: "/products/residential",
         sub: [
-            { label: "On-Grid Rooftop Systems", href: "/products/residential/on-grid" },
-            { label: "Hybrid Solar Systems", href: "/products/residential/hybrid" },
-            { label: "Battery Storage Solutions", href: "/products/residential/battery" },
+            { label: "GreenHome 10-20kW", href: "/products/residential/greenHome" },
+            { label: "GreenDrive – Vehicle to Home & Grid", href: "/products/residential/greenDrive" },
+
         ],
     },
     {
-        label: "SME & Commercial",
+        label: "SME & Commercial – GreenBiz",
         href: "/products/commercial",
         sub: [
-            { label: "Commercial Rooftop Solar", href: "/products/commercial/rooftop" },
-            { label: "Hybrid Energy Systems", href: "/products/commercial/hybrid" },
-            { label: "Energy Monitoring & SCADA", href: "/products/commercial/monitoring" },
+            { label: "SME – 30-50kW Solution", href: "/products/commercial/sme" },
+            { label: "Large – 50kW to 1MW Hybrid Smart Solutions", href: "/products/commercial/large" },
         ],
     },
     {
-        label: "Industrial Solar",
+        label: "Industrial – GreenIndus",
         href: "/products/industrial",
         sub: [
-            { label: "Large-Scale Solar Plants", href: "/products/industrial/plants" },
-            { label: "Industrial Battery Banks", href: "/products/industrial/battery" },
-            { label: "IPP & EPC Solutions", href: "/products/industrial/ipp" },
+            { label: "Industrial Grid Tied Solar Systems", href: "/products/industrial/grid-tied" },
+            { label: "GreenVault – Industrial BESS", href: "/products/industrial/greenvault" },
+            { label: "GreenGrid – EMS System", href: "/products/industrial/greengrid" },
         ],
     },
     {
-        label: "Net Metering",
-        href: "/products/net-metering",
+        label: "GreenCare",
+        href: "/products/greencare",
         sub: [
-            { label: "NEPRA Registration", href: "/products/net-metering/registration" },
-            { label: "Grid-Tie Inverters", href: "/products/net-metering/inverters" },
-            { label: "Utility Billing Support", href: "/products/net-metering/billing" },
+            { label: "Annual Maintenance Contracts", href: "/products/greencare/amc" },
+            { label: "Remote Monitoring & Support", href: "/products/greencare/monitoring" },
+            { label: "Panel Cleaning & Inspection", href: "/products/greencare/cleaning" },
         ],
     },
     {
-        label: "Energy Consultancy",
-        href: "/products/consultancy",
+        label: "GreenPartners (channel business)",
+        href: "/products/partners",
         sub: [
-            { label: "Site Assessment", href: "/products/consultancy/assessment" },
-            { label: "ROI & Savings Analysis", href: "/products/consultancy/roi" },
-            { label: "Custom System Design", href: "/products/consultancy/design" },
+            { label: "Become a Channel Partner", href: "/products/partners/apply" },
+            { label: "Referral Program", href: "/products/partners/referral" },
+            { label: "Partner Portal", href: "/products/partners/portal" },
         ],
     },
 ];
@@ -94,7 +93,7 @@ export default function MainNav() {
     const scheduleClose = () => {
         closeTimer.current = setTimeout(() => {
             setActiveDropdown(null);
-            setActiveProductCategory(null); // reset right column when dropdown closes
+            setActiveProductCategory(null);
         }, 120);
     };
 
@@ -164,8 +163,8 @@ export default function MainNav() {
                                                     >
                                                         <div
                                                             className={`flex items-center justify-between px-4 py-2.5 text-sm cursor-default select-none transition-colors ${activeProductCategory === cat.label
-                                                                    ? "text-primary bg-[#EFF6F1] font-medium"
-                                                                    : "text-dark/70 hover:text-primary hover:bg-[#EFF6F1]"
+                                                                ? "text-primary bg-[#EFF6F1] font-medium"
+                                                                : "text-dark/70 hover:text-primary hover:bg-[#EFF6F1]"
                                                                 }`}
                                                         >
                                                             {cat.label}
