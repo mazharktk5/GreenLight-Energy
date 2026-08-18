@@ -3,7 +3,7 @@ import { ArrowRight, PhoneCall } from "lucide-react";
 
 export default function AboutCTA() {
     return (
-        <section className="bg-cream py-16 sm:py-24 px-4">
+        <section className="bg-cream py-12 sm:py-16 px-4">
             <div className="mx-auto max-w-6xl">
                 <div className="relative bg-primary rounded-3xl px-8 sm:px-12 py-12 sm:py-16 overflow-hidden text-center">
                     {/* Background decorations */}

@@ -1,6 +1,6 @@
 export default function AboutHero() {
     return (
-        <section className="relative bg-cream overflow-hidden pt-32 pb-20 sm:pt-44 sm:pb-28">
+        <section className="relative bg-cream overflow-hidden pt-32 pb-10 sm:pt-44 sm:pb-14">
             {/* Large decorative ring — top right */}
             <div className="absolute -top-32 -right-32 w-130 h-130 rounded-full border-40 border-primary/6 pointer-events-none" />
             {/* Smaller filled blob — bottom left */}

@@ -1,5 +1,3 @@
-import { Link2, Share2 } from "lucide-react";
-
 const team = [
     {
         name: "Muhammad Tariq",
@@ -29,7 +27,7 @@ const team = [
 
 export default function LeadershipTeam() {
     return (
-        <section className="bg-cream py-16 sm:py-24 px-4">
+        <section className="bg-cream py-12 sm:py-16 px-4">
             <div className="mx-auto max-w-6xl">
 
                 <div className="text-center mb-12 sm:mb-16">
@@ -72,7 +70,7 @@ export default function LeadershipTeam() {
                             </div>
 
                             {/* Content */}
-                            <div className="pt-8 pb-6 px-6">
+                            <div className="pt-8 pb-7 px-6">
                                 <h3 className="font-heading font-bold text-primary text-base sm:text-lg text-center mb-1">
                                     {name}
                                 </h3>
@@ -81,24 +79,6 @@ export default function LeadershipTeam() {
                                 <p className="text-gray text-xs sm:text-sm leading-relaxed text-center">
                                     {bio}
                                 </p>
-
-                                {/* Social links */}
-                                <div className="flex justify-center gap-3 mt-5">
-                                    <a
-                                        href="#"
-                                        aria-label={`${name} LinkedIn`}
-                                        className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all"
-                                    >
-                                        <Link2 size={14} />
-                                    </a>
-                                    <a
-                                        href="#"
-                                        aria-label={`${name} Share`}
-                                        className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all"
-                                    >
-                                        <Share2 size={14} />
-                                    </a>
-                                </div>
                             </div>
                         </div>
                     ))}

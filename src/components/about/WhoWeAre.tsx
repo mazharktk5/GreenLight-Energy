@@ -23,11 +23,11 @@ const pillars = [
 
 export default function WhoWeAre() {
     return (
-        <section className="bg-cream py-16 sm:py-24 px-4">
+        <section className="bg-cream pt-10 sm:pt-14 pb-14 sm:pb-20 px-4">
             <div className="mx-auto max-w-6xl">
 
                 {/* Top: who we are */}
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-20">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-12">
                     <div>
                         <span className="inline-block bg-gold text-dark text-[10px] sm:text-xs font-bold tracking-widest uppercase px-4 py-1.5 rounded-full mb-5">
                             Who We Are

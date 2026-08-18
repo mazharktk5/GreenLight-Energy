@@ -15,7 +15,7 @@ const highlights = [
 
 export default function NationalPresence() {
     return (
-        <section className="bg-dark-footer py-16 sm:py-24 px-4 overflow-hidden relative">
+        <section className="bg-dark-footer py-12 sm:py-16 px-4 overflow-hidden relative">
             {/* Ambient glow */}
             <div className="absolute -top-20 right-0 w-96 h-96 rounded-full bg-primary/25 blur-3xl pointer-events-none" />
             <div className="absolute bottom-0 left-0 w-64 h-64 rounded-full bg-secondary/15 blur-3xl pointer-events-none" />
