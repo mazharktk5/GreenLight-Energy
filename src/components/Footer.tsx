@@ -1,7 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import { MapPin, Phone, Mail } from "lucide-react";
-import { FaFacebook, FaInstagram, FaLinkedinIn, FaYoutube } from "react-icons/fa";
+import { FaFacebook, FaInstagram, FaLinkedinIn } from "react-icons/fa";
+import { FaXTwitter, FaTiktok } from "react-icons/fa6";
 
 const quickLinks = [
     { label: "Home", href: "/" },
@@ -18,10 +19,11 @@ const services = [
 ];
 
 const socials = [
-    { icon: FaFacebook, href: "#", label: "Facebook" },
-    { icon: FaInstagram, href: "#", label: "Instagram" },
+    { icon: FaFacebook, href: "https://web.facebook.com/profile.php?id=61591904770651", label: "Facebook" },
+    { icon: FaInstagram, href: "https://www.instagram.com/infogreenlightenergy/", label: "Instagram" },
     { icon: FaLinkedinIn, href: "#", label: "LinkedIn" },
-    { icon: FaYoutube, href: "#", label: "YouTube" },
+    { icon: FaXTwitter, href: "https://x.com/greenlight58", label: "X" },
+    { icon: FaTiktok, href: "https://www.tiktok.com/@greenlightenergy26", label: "TikTok" },
 ];
 
 export default function Footer() {

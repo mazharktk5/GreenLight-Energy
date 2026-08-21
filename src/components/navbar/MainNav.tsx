@@ -5,12 +5,6 @@ import Link from "next/link";
 import { useState, useEffect, useRef } from "react";
 import { ChevronDown, ChevronRight, Menu, X } from "lucide-react";
 
-const companyDropdown = [
-    { label: "About Us", href: "/about" },
-    { label: "Blogs", href: "/blogs" },
-    { label: "Careers", href: "/careers" },
-];
-
 const productsData = [
     {
         label: "Residential – GreenHome",
@@ -18,7 +12,6 @@ const productsData = [
         sub: [
             { label: "GreenHome 10-20kW", href: "/products/residential/greenHome" },
             { label: "GreenDrive – Vehicle to Home & Grid", href: "/products/residential/greenDrive" },
-
         ],
     },
     {
@@ -34,26 +27,6 @@ const productsData = [
         href: "/products/industrial",
         sub: [
             { label: "Industrial Grid Tied Solar Systems", href: "/products/industrial/grid-tied" },
-            { label: "GreenVault – Industrial BESS", href: "/products/industrial/greenvault" },
-            { label: "GreenGrid – EMS System", href: "/products/industrial/greengrid" },
-        ],
-    },
-    {
-        label: "GreenCare",
-        href: "/products/greencare",
-        sub: [
-            { label: "Annual Maintenance Contracts", href: "/products/greencare/amc" },
-            { label: "Remote Monitoring & Support", href: "/products/greencare/monitoring" },
-            { label: "Panel Cleaning & Inspection", href: "/products/greencare/cleaning" },
-        ],
-    },
-    {
-        label: "GreenPartners (channel business)",
-        href: "/products/partners",
-        sub: [
-            { label: "Become a Channel Partner", href: "/products/partners/apply" },
-            { label: "Referral Program", href: "/products/partners/referral" },
-            { label: "Partner Portal", href: "/products/partners/portal" },
         ],
     },
 ];
@@ -66,10 +39,9 @@ type NavItem = {
 };
 
 const navLinks: NavItem[] = [
-    { label: "Company", href: "#", dropdown: companyDropdown },
+    { label: "About", href: "/about" },
     { label: "Products", href: "#", megaMenu: true },
     { label: "Services", href: "/services" },
-    { label: "System Components", href: "/system-components" },
 ];
 
 export default function MainNav() {
@@ -277,20 +249,13 @@ export default function MainNav() {
                     <ul className="flex flex-col gap-1">
                         {/* Company sub-list */}
                         <li>
-                            <p className="text-dark/70 text-sm font-medium px-2 py-2.5">Company</p>
-                            <ul className="pl-3 border-l-2 border-gold/50 mb-2 flex flex-col gap-1">
-                                {companyDropdown.map((item) => (
-                                    <li key={item.label}>
-                                        <Link
-                                            href={item.href}
-                                            className="text-dark/60 hover:text-primary text-sm block py-1.5 px-2 transition-colors"
-                                            onClick={() => setMobileOpen(false)}
-                                        >
-                                            {item.label}
-                                        </Link>
-                                    </li>
-                                ))}
-                            </ul>
+                            <Link
+                                href="/about"
+                                className="text-dark/70 hover:text-primary text-sm font-medium block px-2 py-2.5 transition-colors"
+                                onClick={() => setMobileOpen(false)}
+                            >
+                                About
+                            </Link>
                         </li>
                         {/* Products sub-list */}
                         <li>
@@ -316,15 +281,6 @@ export default function MainNav() {
                                 onClick={() => setMobileOpen(false)}
                             >
                                 Services
-                            </Link>
-                        </li>
-                        <li>
-                            <Link
-                                href="/system-components"
-                                className="text-dark/70 hover:text-primary text-sm font-medium block px-2 py-2.5 transition-colors"
-                                onClick={() => setMobileOpen(false)}
-                            >
-                                System Components
                             </Link>
                         </li>
                         <li className="pt-2">

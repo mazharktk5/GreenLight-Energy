@@ -4,7 +4,8 @@ import Image from "next/image";
 import { useState, useRef } from "react";
 import emailjs from "@emailjs/browser";
 import { Mail, Phone, MessageCircle, MapPin, Send } from "lucide-react";
-import { FaFacebook, FaInstagram, FaLinkedinIn, FaYoutube } from "react-icons/fa";
+import { FaFacebook, FaInstagram, FaLinkedinIn } from "react-icons/fa";
+import { FaXTwitter, FaTiktok } from "react-icons/fa6";
 
 const cities = [
     "Karachi", "Lahore", "Islamabad", "Rawalpindi", "Faisalabad",
@@ -13,10 +14,11 @@ const cities = [
 ];
 
 const socials = [
-    { icon: FaFacebook, href: "#", label: "Facebook" },
-    { icon: FaInstagram, href: "#", label: "Instagram" },
+    { icon: FaFacebook, href: "https://web.facebook.com/profile.php?id=61591904770651", label: "Facebook" },
+    { icon: FaInstagram, href: "https://www.instagram.com/infogreenlightenergy/", label: "Instagram" },
     { icon: FaLinkedinIn, href: "#", label: "LinkedIn" },
-    { icon: FaYoutube, href: "#", label: "YouTube" },
+    { icon: FaXTwitter, href: "https://x.com/greenlight58", label: "X" },
+    { icon: FaTiktok, href: "https://www.tiktok.com/@greenlightenergy26", label: "TikTok" },
 ];
 
 const selectClass =
@@ -222,14 +224,14 @@ export default function ContactPage() {
                     </div>
 
                     {/* ── Right form panel ── */}
-                    <div className="lg:col-span-2 bg-dark-footer rounded-3xl p-8 sm:p-10 relative overflow-hidden flex flex-col min-h-[500px]">
+                    <div className="lg:col-span-2 bg-dark-footer rounded-3xl p-8 sm:p-10 relative overflow-hidden flex flex-col min-h-125">
                         {/* decorative glows */}
                         <div className="absolute -top-16 -right-16 w-56 h-56 rounded-full bg-secondary/30 blur-3xl pointer-events-none" />
                         <div className="absolute -bottom-12 -left-12 w-48 h-48 rounded-full bg-white/5 blur-2xl pointer-events-none" />
 
                         {submitted ? (
                             <div className="relative z-10 flex flex-col items-center justify-center text-center flex-1 py-10 px-4">
-                                <div className="w-20 h-20 rounded-full bg-gradient-to-tr from-gold/20 to-gold/5 border border-gold/30 flex items-center justify-center mb-6 shadow-[0_0_40px_rgba(212,175,55,0.15)]">
+                                <div className="w-20 h-20 rounded-full bg-linear-to-tr from-gold/20 to-gold/5 border border-gold/30 flex items-center justify-center mb-6 shadow-[0_0_40px_rgba(212,175,55,0.15)]">
                                     <svg className="w-10 h-10 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                                     </svg>
@@ -361,5 +363,6 @@ export default function ContactPage() {
                 </div>
             </div>
         </main>
+
     );
 }
