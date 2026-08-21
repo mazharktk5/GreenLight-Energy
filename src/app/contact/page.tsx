@@ -104,9 +104,9 @@ export default function ContactPage() {
                                 <div>
                                     <p className="text-primary font-semibold text-sm mb-0.5">Call Us</p>
                                     <a href="tel:+923001234567" className="text-gray text-sm hover:text-primary transition-colors">
-                                        +92 300 123 4567
+                                        +92 326 8468166
                                     </a>
-                                    <p className="text-gray/60 text-xs mt-1">Mon–Fri, 9am to 6pm.</p>
+                                    <p className="text-gray/60 text-xs mt-1">Mon–Sat, 10am to 6pm.</p>
                                 </div>
                             </div>
 
@@ -117,7 +117,7 @@ export default function ContactPage() {
                                 <div>
                                     <p className="text-primary font-semibold text-sm mb-0.5">WhatsApp</p>
                                     <a href="https://wa.me/923001234567" target="_blank" rel="noreferrer" className="text-gray text-sm hover:text-primary transition-colors">
-                                        +92 300 123 4567
+                                        +92 326 8468166
                                     </a>
                                     <p className="text-gray/60 text-xs mt-1">Chat with us directly.</p>
                                 </div>
@@ -129,7 +129,7 @@ export default function ContactPage() {
                                 </div>
                                 <div>
                                     <p className="text-primary font-semibold text-sm mb-0.5">Head Office</p>
-                                    <p className="text-gray text-sm">Karachi, Pakistan</p>
+                                    <p className="text-gray text-sm">Peshawar, Pakistan</p>
                                     <p className="text-gray/60 text-xs mt-1">Serving nationwide.</p>
                                 </div>
                             </div>

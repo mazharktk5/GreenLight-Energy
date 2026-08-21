@@ -68,7 +68,7 @@ type NavItem = {
 const navLinks: NavItem[] = [
     { label: "Company", href: "#", dropdown: companyDropdown },
     { label: "Products", href: "#", megaMenu: true },
-    { label: "Projects", href: "/projects" },
+    { label: "Services", href: "/services" },
     { label: "System Components", href: "/system-components" },
 ];
 
@@ -311,11 +311,11 @@ export default function MainNav() {
                         </li>
                         <li>
                             <Link
-                                href="/projects"
+                                href="/services"
                                 className="text-dark/70 hover:text-primary text-sm font-medium block px-2 py-2.5 transition-colors"
                                 onClick={() => setMobileOpen(false)}
                             >
-                                Projects
+                                Services
                             </Link>
                         </li>
                         <li>

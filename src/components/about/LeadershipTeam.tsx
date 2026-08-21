@@ -1,18 +1,18 @@
 const team = [
     {
-        name: "Muhammad Tariq",
-        role: "Chief Executive Officer",
-        badge: "CEO",
+        name: "Dr. Muhammad Sheraz",
+        role: "Chairman & Founder",
+        badge: "Chairman",
         bio: "A visionary leader with 15+ years in renewable energy and infrastructure. Muhammad steers GreenLight's strategic direction and nationwide expansion — driving the mission to make solar affordable for every Pakistani household.",
-        initials: "MT",
+        initials: "MS",
         color: "from-primary to-secondary",
     },
     {
-        name: "Ayesha Raza",
-        role: "Chief Technology Officer",
-        badge: "CTO",
-        bio: "With a background in electrical engineering from NUST and a decade of solar R&D experience, Ayesha leads our engineering teams to deliver precision-designed systems that consistently outperform industry benchmarks.",
-        initials: "AR",
+        name: "Muhammad Ayaz",
+        role: "Chief Executive Officer",
+        badge: "CEO",
+        bio: "With a background in electrical engineering from NUST and a decade of solar R&D experience, Muhammad leads our engineering teams to deliver precision-designed systems that consistently outperform industry benchmarks.",
+        initials: "MA",
         color: "from-[#0D5C2A] to-[#1F8A50]",
     },
     {
