@@ -3,6 +3,7 @@ import { Montserrat, Poppins } from "next/font/google";
 import "./globals.css";
 import MainNav from "@/components/navbar/MainNav";
 import Footer from "@/components/Footer";
+import WhatsAppFloat from "@/components/WhatsAppFloat";
 
 const montserrat = Montserrat({
   variable: "--font-montserrat",
@@ -31,6 +32,7 @@ export default function RootLayout({
       <body className="overflow-x-hidden">
         <MainNav />
         {children}
+        <WhatsAppFloat />
         <Footer />
       </body>
     </html>
