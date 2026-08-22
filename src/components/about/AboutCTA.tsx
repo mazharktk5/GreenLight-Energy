@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight, PhoneCall } from "lucide-react";
+import { ArrowRight, MessageCircle } from "lucide-react";
 
 export default function AboutCTA() {
     return (
@@ -39,11 +39,13 @@ export default function AboutCTA() {
                                 <ArrowRight size={16} />
                             </Link>
                             <a
-                                href="tel:+923001234567"
+                                href="https://wa.me/923268468166"
+                                target="_blank"
+                                rel="noreferrer"
                                 className="inline-flex items-center gap-2 px-7 py-3 bg-white/10 border border-white/25 text-white font-semibold text-sm rounded-full hover:bg-white/20 transition-all"
                             >
-                                <PhoneCall size={16} />
-                                Call Us Now
+                                <MessageCircle size={16} />
+                                WhatsApp Us
                             </a>
                         </div>
                     </div>

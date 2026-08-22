@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { useState, useRef } from "react";
 import emailjs from "@emailjs/browser";
-import { Mail, Phone, MessageCircle, MapPin, Send } from "lucide-react";
+import { Mail, MessageCircle, MapPin, Send } from "lucide-react";
 import { FaFacebook, FaInstagram, FaLinkedinIn } from "react-icons/fa";
 import { FaXTwitter, FaTiktok } from "react-icons/fa6";
 
@@ -46,7 +46,7 @@ export default function ContactPage() {
             city: fd.get("city") as string,
             customerType: fd.get("customerType") as string,
             monthlyBill: fd.get("monthlyBill") as string,
-            inverterACs: fd.get("inverterACs") as string,
+            appliances: fd.get("appliances") as string,
             propertySize: fd.get("propertySize") as string,
             propertyType: fd.get("propertyType") as string,
         };
@@ -67,14 +67,12 @@ export default function ContactPage() {
             `*City:* ${d.city}`,
             `*Customer Type:* ${d.customerType}`,
             `*Monthly Bill:* ${d.monthlyBill}`,
-            `*Inverter ACs:* ${d.inverterACs}`,
+            `*No. of Appliances:* ${d.appliances}`,
             `*Property Size:* ${d.propertySize}`,
             `*Property Type:* ${d.propertyType}`,
         ].join("\n");
 
         window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`, "_blank");
-
-        // Don't hide the form for WhatsApp, just give button feedback
         setWhatsappLoading(true);
         setTimeout(() => setWhatsappLoading(false), 3000);
     };
@@ -82,18 +80,37 @@ export default function ContactPage() {
     const handleEmail = async () => {
         if (!formRef.current?.reportValidity()) return;
         setEmailSending(true);
-        const d = getFormData();
         try {
+            const d = getFormData();
             await emailjs.send(
                 process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
                 process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
-                { ...d, name: `${d.firstName} ${d.lastName}` },
-                process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
+                {
+                    name: `${d.firstName} ${d.lastName}`,
+                    firstName: d.firstName,
+                    lastName: d.lastName,
+                    email: d.email,
+                    phone: d.phone,
+                    company: d.company || "—",
+                    city: d.city,
+                    customerType: d.customerType,
+                    monthlyBill: d.monthlyBill,
+                    appliances: d.appliances,
+                    propertySize: d.propertySize,
+                    propertyType: d.propertyType,
+                },
+                { publicKey: process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY! }
             );
             setSubmitted(true);
-            formRef.current?.reset(); // Clear the form so it's fresh if they go back
-        } catch {
-            alert("Email failed to send. Please use WhatsApp or call us directly.");
+            formRef.current?.reset();
+        } catch (err: unknown) {
+            const detail =
+                err && typeof err === "object" && "text" in err
+                    ? (err as { text: string }).text
+                    : err instanceof Error
+                        ? err.message
+                        : "Unknown error";
+            alert(`Email failed to send: ${detail}\n\nPlease use WhatsApp or contact us directly.`);
         } finally {
             setEmailSending(false);
         }
@@ -163,27 +180,14 @@ export default function ContactPage() {
 
                             <div className="flex gap-4 items-start">
                                 <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center shrink-0">
-                                    <Phone size={17} className="text-primary" />
-                                </div>
-                                <div>
-                                    <p className="text-primary font-semibold text-sm mb-0.5">Call Us</p>
-                                    <a href="tel:+923001234567" className="text-gray text-sm hover:text-primary transition-colors">
-                                        +92 326 8468166
-                                    </a>
-                                    <p className="text-gray/60 text-xs mt-1">Mon–Sat, 10am to 6pm.</p>
-                                </div>
-                            </div>
-
-                            <div className="flex gap-4 items-start">
-                                <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center shrink-0">
                                     <MessageCircle size={17} className="text-primary" />
                                 </div>
                                 <div>
                                     <p className="text-primary font-semibold text-sm mb-0.5">WhatsApp</p>
-                                    <a href="https://wa.me/923001234567" target="_blank" rel="noreferrer" className="text-gray text-sm hover:text-primary transition-colors">
+                                    <a href="https://wa.me/923268468166" target="_blank" rel="noreferrer" className="text-gray text-sm hover:text-primary transition-colors">
                                         +92 326 8468166
                                     </a>
-                                    <p className="text-gray/60 text-xs mt-1">Chat with us directly.</p>
+                                    <p className="text-gray/60 text-xs mt-1">Mon–Sat, 10am to 6pm.</p>
                                 </div>
                             </div>
 
@@ -300,13 +304,13 @@ export default function ContactPage() {
                                         </select>
                                     </div>
                                     <div>
-                                        <select required name="inverterACs" defaultValue="" className={selectClass}>
-                                            <option value="" disabled>How many Inverter ACs?</option>
-                                            <option>None</option>
-                                            <option>1 – 2</option>
-                                            <option>3 – 5</option>
+                                        <select required name="appliances" defaultValue="" className={selectClass}>
+                                            <option value="" disabled>No. of Electric Appliances</option>
+                                            <option>1 – 5</option>
                                             <option>6 – 10</option>
-                                            <option>More than 10</option>
+                                            <option>11 – 20</option>
+                                            <option>21 – 30</option>
+                                            <option>More than 30</option>
                                         </select>
                                     </div>
                                     <div>
