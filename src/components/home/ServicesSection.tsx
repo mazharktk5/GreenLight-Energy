@@ -49,7 +49,7 @@ export default function ServicesSection() {
 
                     <div className="relative h-72 lg:h-80 rounded-2xl overflow-hidden shadow-lg">
                         <Image
-                            src="/aboutImage.jfif"
+                            src="/mariana-proenca-GXiHwHkIdVs-unsplash.jpg"
                             alt="GreenLight Energy solar installation"
                             fill
                             className="object-cover"
