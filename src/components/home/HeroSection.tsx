@@ -45,13 +45,12 @@ export default function HeroSection() {
             {/* Right — hero image, hidden on mobile */}
             <div className="relative hidden md:block overflow-hidden">
                 <Image
-                    src="/hero.jpg"
+                    src="/heroo-image.jpg"
                     alt="Solar installation by GreenLight Energy"
                     fill
                     className="object-cover"
                     priority
                 />
-                <div className="absolute inset-y-0 left-0 w-16 bg-linear-to-r from-cream/50 to-transparent" />
             </div>
         </section>
     );
