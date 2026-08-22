@@ -70,6 +70,7 @@ export default function MainNav() {
     };
 
     const activeSubs = productsData.find((p) => p.label === activeProductCategory)?.sub ?? [];
+    const [mobileProductOpen, setMobileProductOpen] = useState<string | null>(null);
 
     return (
         <header className="fixed top-4 sm:top-6 inset-x-0 z-50 px-4">
@@ -257,19 +258,38 @@ export default function MainNav() {
                                 About
                             </Link>
                         </li>
-                        {/* Products sub-list */}
+                        {/* Products accordion */}
                         <li>
                             <p className="text-dark/70 text-sm font-medium px-2 py-2.5">Products</p>
-                            <ul className="pl-3 border-l-2 border-gold/50 mb-2 flex flex-col gap-1">
+                            <ul className="flex flex-col gap-1">
                                 {productsData.map((cat) => (
                                     <li key={cat.label}>
-                                        <Link
-                                            href={cat.href}
-                                            className="text-dark/60 hover:text-primary text-sm block py-1.5 px-2 transition-colors"
-                                            onClick={() => setMobileOpen(false)}
+                                        <button
+                                            onClick={() => setMobileProductOpen(mobileProductOpen === cat.label ? null : cat.label)}
+                                            className="w-full flex items-center justify-between px-3 py-2 rounded-xl text-dark/65 hover:text-primary hover:bg-[#EFF6F1] text-sm transition-colors"
                                         >
-                                            {cat.label}
-                                        </Link>
+                                            <span>{cat.label}</span>
+                                            <ChevronDown
+                                                size={14}
+                                                className={`opacity-40 transition-transform duration-200 ${mobileProductOpen === cat.label ? "rotate-180" : ""}`}
+                                            />
+                                        </button>
+                                        {mobileProductOpen === cat.label && (
+                                            <ul className="pl-3 border-l-2 border-gold/40 ml-3 mt-1 mb-1 flex flex-col gap-0.5">
+                                                {cat.sub.map((sub) => (
+                                                    <li key={sub.label}>
+                                                        <Link
+                                                            href={sub.href}
+                                                            className="flex items-center gap-2 text-dark/60 hover:text-primary text-sm py-2 px-2 transition-colors"
+                                                            onClick={() => { setMobileOpen(false); setMobileProductOpen(null); }}
+                                                        >
+                                                            <span className="w-1.5 h-1.5 rounded-full bg-gold shrink-0" />
+                                                            {sub.label}
+                                                        </Link>
+                                                    </li>
+                                                ))}
+                                            </ul>
+                                        )}
                                     </li>
                                 ))}
                             </ul>
