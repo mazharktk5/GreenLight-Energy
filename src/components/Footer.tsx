@@ -7,15 +7,15 @@ import { FaXTwitter, FaTiktok } from "react-icons/fa6";
 const quickLinks = [
     { label: "Home", href: "/" },
     { label: "About Us", href: "/about" },
-    { label: "Projects", href: "/projects" },
+    { label: "Services", href: "/services" },
     { label: "Contact", href: "/contact" },
 ];
 
 const services = [
-    { label: "Industrial Solar", href: "/services/industrial" },
-    { label: "Residential Solar", href: "/services/residential" },
-    { label: "Net Metering", href: "/services/net-metering" },
-    { label: "Energy Consultancy", href: "/services/consultancy" },
+    { label: "Industrial Solar", href: "/products/industrial/grid-tied" },
+    { label: "Residential Solar", href: "/products/residential/greenHome" },
+    { label: "Net Metering", href: "/services" },
+    { label: "Energy Consultancy", href: "/services" },
 ];
 
 const socials = [
